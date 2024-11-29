@@ -1,0 +1,1033 @@
+/* Общие стили для документа */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Fallback color if image doesn't load */
+}
+
+.fullscreen-background {
+    background: url('images/background2.webp') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    padding: 20px;
+}
+
+.fullscreen-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.fullscreen-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.text-columns {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет колонкам переноситься */
+    gap: 20px; /* Расстояние между колонками */
+}
+
+.text-columns .column {
+    flex: 1;
+    min-width: auto; /* Убираем фиксированную минимальную ширину */
+    max-width: 100%; /* Колонка не превышает ширину контейнера */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон для контраста */
+    border-radius: 8px; /* Скругленные углы */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Мягкая тень */
+    word-wrap: break-word; /* Переносим длинные слова */
+    overflow-wrap: break-word;
+}
+
+/* Заголовки внутри столбцов */
+.column h2 {
+    color: #ffd700; /* Золотистый цвет для заголовков */
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* Текст внутри столбцов */
+.column p {
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Список внутри столбцов */
+.column ul {
+    list-style-type: disc;
+    margin: 10px 0 0 20px; /* Отступ для списков */
+}
+
+.column ul li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Общий стиль остается, добавляем изменения для мобильных устройств */
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .fullscreen-content {
+        width: 100%; /* Контент занимает всю ширину экрана */
+        padding: 10px; /* Отступы для предотвращения прилипания текста к краям */
+        box-sizing: border-box; /* Включаем padding в ширину */
+    }
+
+    .text-columns {
+        flex-direction: column; /* Располагаем колонки вертикально */
+        gap: 15px; /* Уменьшаем расстояние между колонками */
+        padding: 0; /* Убираем лишние внешние отступы */
+    }
+
+    .text-columns .column {
+        width: 100%; /* Каждая колонка занимает всю ширину */
+        padding: 10px; /* Дополнительные отступы внутри колонок */
+        box-sizing: border-box; /* Учитываем padding в ширину */
+        margin: 0; /* Убираем любые внешние отступы */
+    }
+
+    .fullscreen-background {
+        background-attachment: scroll; /* Убираем фиксированный фон */
+        background-position: center center; /* Центрируем фон */
+    }
+}
+
+/* Адаптация для очень маленьких экранов */
+@media (max-width: 480px) {
+    .column h2 {
+        font-size: 1.2rem; /* Уменьшаем размер заголовков */
+    }
+
+    .column p,
+    .column ul li {
+        font-size: 0.9rem; /* Уменьшаем текст внутри колонок */
+    }
+
+    .text-columns .column {
+        padding: 8px; /* Минимальные отступы для экономии места */
+    }
+}
+
+/* Стиль для изображения в контакт меню */
+.contact-logo {
+    width: 10%; /* Размер можно изменить по необходимости */
+    height: auto;
+    margin-right: 1px; /* Отступ между изображением и текстом */
+    vertical-align: middle; /* Для выравнивания по тексту */
+}
+
+.header-logo {
+    width: 10%; /* Процентная ширина относительно родителя */
+    min-width: 100px; /* Минимальная ширина в пикселях */
+    height: auto;
+    margin: 10px; /* Отступ вокруг изображения */
+    vertical-align: middle; /* Выравнивание по вертикали */
+}
+
+.progress-bar {
+    position: fixed; /* Фиксируем прогресс-бар */
+    top: 0; /* Расположение сверху */
+    left: 0;
+    width: 0%; /* Начальная ширина */
+    height: 5px; /* Высота прогресс-бара */
+    background: linear-gradient(90deg, #8d50ff, #E6E6FA); /* Градиент для прогресс-бара */
+    z-index: 10000; /* Поверх всех элементов */
+    transition: width 0.2s ease; /* Плавное изменение ширины */
+}
+
+.hidden-header {
+    position: fixed;
+    max-width: 97%;
+    top: -60px; /* Скрываем хэдер по умолчанию */
+    left: 0;
+    width: 100%; /* Полная ширина */
+    height: 60px; /* Высота хэдера */
+    background: linear-gradient(90deg, #E6E6FA, #aba2ff); /* Градиент для хедера */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px; /* Внутренние отступы */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9998; /* Поверх контента */
+    transition: top 0.3s ease; /* Плавное скрытие и появление */
+}
+
+.hidden-header.show {
+    top: 0; /* Позиция для отображения хедера */
+}
+
+/* Адаптация для телефонов */
+@media (max-width: 768px) {
+    .hidden-header {
+        max-width: 97%; /* Хэдер занимает всю ширину */
+        padding: 0 10px; /* Уменьшаем внутренние отступы */
+    }
+}
+
+
+/* Хэдер */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #E6E6FA, #aba2ff); /* Градиент для хедера */
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 60px;
+    padding: 0 20px; /* Внутренние отступы */
+}
+
+/* Действия в хэдере (кнопки справа) */
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* Кнопка Home */
+.home-button {
+    background: linear-gradient(90deg, #aba2ff, #E6E6FA); /* Градиент для кнопки */
+    color: #4a4a6a; /* Белый текст */
+    border: 1px solid #aba2ff; /* Цвет рамки соответствует кнопке */
+    height: 60px; /* Занимает всю высоту родителя */
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-left: -4px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px; /* Легкое закругление углов */
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Мягкая тень */
+}
+
+.home-button:hover {
+    background: linear-gradient(90deg, #E6E6FA, #aba2ff); /* Перевернутый градиент при наведении */
+    color: #8d50ff; /* Меняем цвет текста */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Усиленная тень */
+}
+
+/* Выпадающее меню */
+.language-dropdown {
+    position: relative;
+}
+
+.dropdown-button {
+    background: linear-gradient(90deg, #aba2ff, #E6E6FA); /* Градиент для кнопки */
+    color: #4a4a6a;
+    border: 1px solid #aba2ff;
+    height: 60px; /* Занимает всю высоту родителя */
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-button:hover {
+    background: linear-gradient(90deg, #E6E6FA, #aba2ff);
+    color: #8d50ff;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Меню выбора языка */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #E6E6FA; /* Светлый фон для контраста */
+    border: 1px solid #aba2ff;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: #8d50ff; /* Фиолетовый текст */
+    text-decoration: none;
+    padding: 8px 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #aba2ff; /* Акцентный фон при наведении */
+    color: white; /* Белый текст */
+}
+
+/* Показывать меню при наведении */
+.language-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+/* Навигация */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #aba2ff;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 1px solid #aba2ff;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    background-color: #aba2ff;
+    color: white;
+}
+
+/* Карточки */
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #766eff; /* Сохраняем насыщенный оттенок */
+    color: #ffffff; /* Белый текст */
+    text-align: center;
+    padding: 20px 15px; /* Увеличенные отступы для лучшей читаемости */
+    margin-top: 30px;
+    border-top: 3px solid #aba2ff; /* Линия сверху для разделения */
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    font-family: 'Arial', sans-serif; /* Простой и современный шрифт */
+    font-size: 16px; /* Размер текста */
+    line-height: 1.5; /* Пространство между строками */
+}
+
+footer p {
+    margin: 0; /* Удалить стандартные отступы */
+    color: #e1e1e1; /* Светло-серый цвет для текста */
+}
+
+footer p strong {
+    color: #ffd700; /* Золотистый цвет для акцентов */
+    font-weight: bold;
+}
+
+/* Кнопка чата */
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #aba2ff;
+    color: white;
+    font-size: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.chat-button:hover {
+    transform: scale(1.1);
+    background-color: #aba2ff;
+}
+
+.chat-button i {
+    font-size: 1.5rem;
+}
+
+/* Модальное окно чата */
+.chat-modal {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    max-width: 400px;
+    height: 70%; /* Финальная высота на мобильных устройствах */
+    background: white;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(100%);
+    transition: transform 0.4s ease, opacity 0.4s ease; /* Плавный переход */
+    z-index: 999;
+    opacity: 0; /* Начальная прозрачность */
+    pointer-events: none; /* Отключаем клики, пока окно скрыто */
+}
+
+.chat-modal.active {
+    transform: translateY(0); /* Показываем окно */
+    opacity: 1; /* Делаем окно видимым */
+    pointer-events: auto; /* Включаем клики */
+}
+
+.chat-modal.closing {
+    transform: translateY(100%); /* Скрываем окно */
+    opacity: 0; /* Плавное исчезновение */
+    pointer-events: none;
+}
+
+/* Заголовок модального окна */
+.modal-header {
+    padding: 16px;
+    background: #aba2ff;
+    color: white;
+    display: flex;
+    align-items: center; /* Центрируем по вертикали */
+    justify-content: flex-start; /* Рядом друг с другом */
+    font-size: 18px;
+    border-radius: 16px 16px 0 0;
+    gap: 10px; /* Расстояние между изображением и текстом */
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+/* Тело модального окна */
+.modal-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.social-button {
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    width: 80%;
+    transition: background 0.3s ease;
+}
+
+/* Кнопки социальных сетей */
+.social-button.facebook {
+    background: #3b5998;
+}
+
+.social-button.facebook:hover {
+    background: #2d4373;
+}
+
+.social-button.whatsapp {
+    background: #25D366; /* Цвет WhatsApp */
+}
+
+.social-button.whatsapp:hover {
+    background: #1EBEA5; /* Цвет при наведении */
+}
+
+.social-button.instagram {
+    background: #e1306c;
+}
+
+.social-button.instagram:hover {
+    background: #c41e5d;
+}
+
+/* Медиазапрос для мобильных устройств */
+@media (max-width: 768px) {
+    .chat-modal {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        transform: none;
+    }
+
+    .chat-modal.active {
+        transform: translateY(0);
+    }
+}
+
+/* Карусель контейнер */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    position: relative;
+}
+
+/* Обёртка карусели */
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Внутренний контейнер с элементами карусели */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+/* Карточка видео */
+.carousel-item {
+    flex: 0 0 auto; /* Фиксированная ширина */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Видео */
+.carousel-item video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Кнопки карусели */
+.carousel-button {
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    border-radius: 50%; /* Круглая форма кнопок */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Тень */
+    font-size: 18px;
+}
+
+/* Кнопка "Назад" */
+.carousel-button.prev {
+    left: 10px; /* Расположение слева */
+}
+
+/* Кнопка "Вперёд" */
+.carousel-button.next {
+    right: 10px; /* Расположение справа */
+}
+
+/* При наведении на кнопку */
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Более насыщенный фон */
+}
+
+/* Медиазапросы для адаптации */
+
+/* Для экранов шире 768px (планшеты и десктопы) */
+@media (min-width: 768px) {
+    .carousel-item {
+        min-width: calc(100% / 3); /* Три видео в строку */
+    }
+
+    .carousel-button {
+        padding: 15px;
+        font-size: 24px;
+    }
+}
+
+/* Для экранов уже 768px (мобильные устройства) */
+@media (max-width: 767px) {
+    .carousel-item {
+        min-width: 100%; /* Одно видео в строку */
+        padding: 5px; /* Уменьшаем отступы */
+    }
+
+    .carousel-button {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .carousel-button.prev {
+        left: 5px; /* Приближаем кнопки к центру */
+    }
+
+    .carousel-button.next {
+        right: 5px;
+    }
+}
+
+#contact {
+    text-align: center;
+    padding: 0; /* Убираем внутренние отступы */
+    margin: 0; /* Убираем внешние отступы */
+    background-color: #f9f9f9; /* Легкий фон */
+}
+
+#contact h2 {
+    font-size: 24px;
+    color: #020202;
+    margin-bottom: 10px;
+}
+
+#contact p {
+    font-size: 16px;
+    color: #6c6c6c;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Расстояние между логотипами */
+    margin: 0 auto; /* Центрируем */
+    max-width: 500px; /* Ограничиваем ширину контейнера */
+}
+
+.social-links a img {
+    width: 40px; /* Устанавливаем фиксированную ширину */
+    height: 40px; /* Устанавливаем фиксированную высоту */
+    object-fit: contain; /* Сохраняем пропорции логотипов */
+    border: none; /* Убираем любые границы */
+    background: none; /* Убираем фон */
+    box-shadow: none; /* Убираем тени */
+}
+
+#commitment {
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #E6E6FA; /* Лавандовый фон */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2; /* Повышаем z-index, чтобы содержимое отображалось поверх псевдоэлемента */
+}
+
+/* Градиент между секциями */
+#commitment::after {
+    content: "";
+    position: absolute;
+    bottom: -30px; /* Расположение псевдоэлемента */
+    left: 0;
+    width: 100%;
+    height: 100px; /* Увеличиваем высоту градиента */
+    background: linear-gradient(to bottom, #E6E6FA, #aba2ff); /* Плавный переход */
+    z-index: 0; /* Понижаем z-index, чтобы градиент не перекрывал контент */
+}
+
+#commitment h2 {
+    font-size: 24px;
+    color: #020202;
+    margin-bottom: 20px;
+    position: relative; /* Относительное позиционирование для контента */
+    z-index: 1; /* Повышаем z-index, чтобы содержимое отображалось поверх псевдоэлемента */
+}
+
+/* Секция "Our Partners" */
+#partners {
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #aba2ff; /* Бежевый фон */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1; /* Чтобы градиент перекрывал верхнюю часть */
+}
+
+#partners h2 {
+    font-size: 24px;
+    color: #020202;
+    margin-bottom: 20px;
+    position: relative; /* Относительное позиционирование для контента */
+    z-index: 2; /* Повышаем z-index, чтобы содержимое отображалось поверх псевдоэлемента */
+}
+
+/* Общие стили для карточек */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    position: relative; /* Относительное позиционирование для контента */
+    z-index: 2; /* Повышаем z-index, чтобы содержимое отображалось поверх псевдоэлемента */
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    max-width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+#achievements {
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#achievements h2 {
+    font-size: 24px;
+    color: #020202;
+    margin-bottom: 20px;
+}
+
+.achievements-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.achievement-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    max-width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.achievement-item h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.achievement-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Секция преподавателей */
+#teachers {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#teachers h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+#teachers p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+.teacher-carousel {
+    display: flex;
+    justify-content: center; /* Центрируем карточки по горизонтали */
+    align-items: center; /* Центрируем карточки по вертикали */
+    gap: 20px; /* Расстояние между карточками */
+    overflow-x: auto; /* Горизонтальная прокрутка для мобильных устройств */
+    padding: 10px 20px; /* Отступы для равномерного выравнивания */
+    scrollbar-width: thin; /* Уменьшаем ширину скроллбара */
+}
+
+.teacher-carousel::-webkit-scrollbar {
+    height: 8px; /* Высота скроллбара */
+}
+
+.teacher-carousel::-webkit-scrollbar-thumb {
+    background: #766eff; /* Цвет скроллбара */
+    border-radius: 10px; /* Скругление */
+}
+
+.teacher-carousel::-webkit-scrollbar-track {
+    background: #e6e6fa; /* Цвет трека скроллбара */
+}
+
+.teacher-card {
+    flex: 0 0 auto; /* Карточки фиксированной ширины */
+    width: 250px; /* Ширина карточки */
+    min-width: 250px; /* Минимальная ширина карточки */
+    max-width: 100%; /* Ограничиваем ширину */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Для широких экранов */
+@media (min-width: 769px) {
+    .teacher-carousel {
+        justify-content: center; /* Центрируем карточки */
+        padding: 0; /* Убираем лишние отступы */
+    }
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .teacher-carousel {
+        justify-content: flex-start; /* Карточки начинаются с левого края */
+        gap: 10px; /* Уменьшаем расстояние между карточками */
+        padding: 10px; /* Добавляем отступы */
+    }
+
+    .teacher-card {
+        width: 200px; /* Уменьшенная ширина карточек */
+        min-width: 200px; /* Минимальная ширина карточек */
+    }
+}
+
+
+/* Фиксированный размер изображений преподавателей */
+.teacher-card img {
+    width: 150px; /* Фиксированная ширина изображения */
+    height: 150px; /* Фиксированная высота изображения */
+    border-radius: 50%; /* Круглое изображение */
+    object-fit: cover; /* Обрезаем изображение по рамке */
+    object-position: center; /* Центрируем изображение внутри контейнера */
+    margin-bottom: 15px;
+}
+
+.teacher-card h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.teacher-card p {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Основной стиль остается таким же, адаптация ниже */
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    /* Секция преподавателей */
+    #teachers {
+        padding: 20px 10px; /* Уменьшаем отступы */
+    }
+
+    #teachers h2 {
+        font-size: 1.5rem; /* Уменьшаем размер заголовка */
+        margin-bottom: 15px;
+    }
+
+    #teachers p {
+        font-size: 1rem; /* Уменьшаем размер текста */
+        line-height: 1.5;
+        padding: 0 10px; /* Добавляем внутренний отступ */
+    }
+
+    /* Карусель преподавателей */
+    .teacher-carousel {
+        gap: 10px; /* Уменьшаем расстояние между карточками */
+        padding-bottom: 10px;
+    }
+
+    .teacher-card {
+        width: 200px; /* Уменьшаем ширину карточек */
+        padding: 15px; /* Уменьшаем внутренние отступы */
+    }
+
+    .teacher-card img {
+        width: 120px; /* Уменьшаем размер изображений */
+        height: 120px;
+    }
+
+    .teacher-card h3 {
+        font-size: 1rem; /* Уменьшаем размер имени */
+    }
+
+    .teacher-card p {
+        font-size: 0.8rem; /* Уменьшаем размер цитаты */
+    }
+}
+
+/* Адаптация для очень маленьких экранов (до 480px) */
+@media (max-width: 480px) {
+    #teachers {
+        padding: 15px 5px; /* Еще больше уменьшаем отступы */
+    }
+
+    #teachers h2 {
+        font-size: 1.2rem; /* Делаем заголовок компактнее */
+    }
+
+    #teachers p {
+        font-size: 0.9rem; /* Уменьшаем текст */
+    }
+
+    .teacher-carousel {
+        gap: 5px; /* Минимальное расстояние между карточками */
+    }
+
+    .teacher-card {
+        width: 180px; /* Минимальная ширина карточек */
+        padding: 10px; /* Минимальные внутренние отступы */
+    }
+
+    .teacher-card img {
+        width: 100px; /* Компактное изображение */
+        height: 100px;
+    }
+
+    .teacher-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .teacher-card p {
+        font-size: 0.7rem;
+    }
+}
+
+/* Секция и заголовок */
+#curriculum {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+#curriculum h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+#curriculum p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+/* Контейнер для уровней */
+.levels-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Общий стиль для карточек */
+.level-card {
+    flex: 1;
+    min-width: 280px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Уровень Starters */
+.level-starters {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Градиентный фон */
+    border: 2px solid #ff9a9e;
+}
+
+.level-starters h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Уровень Movers */
+.level-movers {
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* Градиентный фон */
+    border: 2px solid #a1c4fd;
+}
+
+.level-movers h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Уровень Flyers */
+.level-flyers {
+    background: linear-gradient(135deg, #89f7fe, #66a6ff); /* Градиентный фон */
+    border: 2px solid #66a6ff;
+}
+
+.level-flyers h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Заключительное описание */
+.final-note {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 30px auto 0;
+}
+

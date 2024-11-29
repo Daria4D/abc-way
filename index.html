@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC WAY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <header class="hidden-header">
+        <!-- Логотип -->
+        <img src="images/header.svg" alt="Header Logo" class="header-logo">
+
+        <!-- Действия -->
+        <div class="header-actions">
+            <div class="language-dropdown">
+                <button class="dropdown-button">Language</button>
+                <div class="dropdown-menu">
+                    <a href="main-en.html">English</a>
+                    <a href="main-ru.html">Русский</a>
+                    <a href="index.html">Français</a>
+                </div>
+            </div>
+            <button class="home-button">Home</button>
+        </div>
+    </header>
+
+
+
+    <div class="fullscreen-background">
+        <div class="fullscreen-content">
+            <div class="text-columns">
+                <div class="column">
+                    <h2>ABC WAY</h2>
+                    <p>ABC WAY – cours d'anglais en ligne pour les enfants de 5 à 15 ans. Des milliers de familles à travers le monde nous font confiance.</p>
+                    <p>Apprenez avec les meilleurs locuteurs natifs :</p>
+                    <ul>
+                        <li>Enseignants professionnels et expérimentés</li>
+                        <li>Cours interactifs</li>
+                        <li>Connexion facile via mobile ou tablette</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h2>Des leçons amusantes et engageantes</h2>
+                    <p>Des leçons amusantes et engageantes chez ABC WAY !</p>
+                    <p>Nos cours sont une aventure passionnante ! Nous utilisons des jeux interactifs, des dessins animés colorés et des activités agréables pour impliquer chaque enfant.</p>
+                    <p>Nous écoutons des chansons joyeuses, résolvons des puzzles et participons à des projets captivants ! Chaque cours est une opportunité d'apprendre quelque chose de nouveau et de partager des expériences avec des amis. Avec nous, pas de place pour l'ennui !</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel-container">
+        <button class="carousel-button prev" onclick="moveCarousel(-1)">❮</button>
+        <div class="carousel-wrapper">
+            <div class="carousel">
+                <div class="carousel-item">
+                    <video src="videos/video1.mp4" controls></video>
+                </div>
+                <div class="carousel-item">
+                    <video src="videos/video2.mp4" controls></video>
+                </div>
+                <div class="carousel-item">
+                    <video src="videos/video3.mp4" controls></video>
+                </div>
+                <div class="carousel-item">
+                    <video src="videos/video4.mp4" controls></video>
+                </div>
+                <!-- Добавьте столько элементов, сколько необходимо -->
+            </div>
+        </div>
+        <button class="carousel-button next" onclick="moveCarousel(1)">❯</button>
+    </div>
+
+    <section id="online-classes" style="text-align: center; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: 20px auto; max-width: 1200px;">
+    <!-- Заголовок -->
+        <h2 style="color: #333; font-size: 2rem; margin-bottom: 20px;">Cours en ligne chez ABC WAY</h2>
+
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 20px; justify-content: center; text-align: left;">
+            <!-- Левая текстовая часть -->
+            <div style="flex: 1; min-width: 300px; padding: 10px;">
+                <ul style="list-style-type: disc; padding-left: 20px; line-height: 1.6; font-size: 1rem; color: #666;">
+                    <li>Approche individualisée garantissant des résultats</li>
+                    <li>Enseignants spécialisés ayant de l'expérience avec les enfants</li>
+                    <li>Développer la capacité de penser en anglais</li>
+                    <li>Créer un environnement anglophone pour favoriser la croissance de votre enfant</li>
+                </ul>
+            </div>
+
+            <!-- Центральное изображение -->
+            <div style="flex: 0 1 auto; text-align: center; padding: 10px;">
+                <img src="images/woman.jpg" alt="Personnage central" style="width: 200px; height: auto; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            </div>
+
+            <!-- Правая текстовая часть -->
+            <div style="flex: 1; min-width: 300px; padding: 10px;">
+                <ul style="list-style-type: disc; padding-left: 20px; line-height: 1.6; font-size: 1rem; color: #666;">
+                    <li>Chaque enseignant est certifié et maîtrise parfaitement l'anglais</li>
+                    <li>Méthodes lumineuses et supports pour capter l'attention</li>
+                    <li>Petits groupes pour une attention maximale à chaque enfant</li>
+                    <li>Recommandations personnalisées pour les parents afin de soutenir le progrès</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-abcway" style="text-align: center; padding: 40px 20px; background-color: #e6e6fa; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: 40px auto; max-width: 1200px; position: relative;">
+        <!-- Image de fond -->
+        <img src="images/zverek_2.png" alt="Personnage de fond" style="position: absolute; top: -20px; left: -40px; width: 150px; opacity: 0.8; z-index: 0;">
+
+        <!-- Titre de la section -->
+        <h2 style="color: #333; font-size: 2rem; margin-bottom: 20px; text-transform: uppercase; position: relative; z-index: 1;">À propos de ABC WAY</h2>
+
+        <!-- Description -->
+        <p style="font-size: 1.1rem; color: #666; line-height: 1.8; max-width: 900px; margin: 0 auto; position: relative; z-index: 1;">
+            Une école d'anglais en ligne spécialisée depuis 5 ans dans l'enseignement des compétences essentielles aux enfants âgés de 5 à 15 ans. Nous aidons les élèves à apprendre l'anglais, à se préparer aux examens et à gagner en confiance.
+        </p>
+
+        <!-- Informations supplémentaires -->
+        <div style="display: flex; align-items: flex-start; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 30px; position: relative; z-index: 1;">
+            <!-- Colonne gauche -->
+            <div style="flex: 1; min-width: 280px; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); position: relative;">
+                <h3 style="color: #333; font-size: 1.2rem; margin-bottom: 15px;">Éducation de haute qualité</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6;">
+                    Nous utilisons des matériaux d'Oxford University Press, garantissant une éducation de haute qualité. Notre programme est basé sur des valeurs familiales traditionnelles, créant une atmosphère chaleureuse et accueillante en classe.
+                </p>
+            </div>
+
+            <!-- Colonne centrale -->
+            <div style="flex: 1; min-width: 280px; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); position: relative;">
+                <!-- Ajouter une image -->
+                <img src="images/zverek_3.png" alt="Personnage central" style="width: 100px; height: auto; margin-bottom: 15px;">
+                <h3 style="color: #333; font-size: 1.2rem; margin-bottom: 15px;">Apprentissage sans stress</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6;">
+                    Nous valorisons chaque élève et nous assurons que l'apprentissage est une expérience agréable et sans stress. Notre approche aide les élèves à gagner en confiance et à apprécier leur parcours éducatif.
+                </p>
+            </div>
+
+            <!-- Colonne droite -->
+            <div style="flex: 1; min-width: 280px; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); position: relative;">
+                <h3 style="color: #333; font-size: 1.2rem; margin-bottom: 15px;">Découvrir le potentiel</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6;">
+                    Avec nous, les élèves découvrent leurs capacités, sont inspirés par l'apprentissage et se sentent partie intégrante d'un monde plus vaste.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+   <section id="curriculum">
+        <!-- Titre de la section -->
+        <h2>Notre Programme</h2>
+        <p>
+            Notre programme est conforme aux normes internationales telles que le CEFR (Cadre Européen Commun de Référence pour les langues) et le CYLE (Cambridge Young Learners English) et inclut les niveaux d'Oxford :
+        </p>
+
+        <!-- Niveaux d'apprentissage -->
+        <div class="levels-container">
+            <!-- Niveau Starters -->
+            <div class="level-card level-starters">
+                <h3>Starters</h3>
+                <p>Pour les débutants qui commencent à apprendre grâce à des jeux et des activités.</p>
+            </div>
+
+            <!-- Niveau Movers -->
+            <div class="level-card level-movers">
+                <h3>Movers</h3>
+                <p>Pour les enfants avec des connaissances de base qui sont prêts à relever de nouveaux défis.</p>
+            </div>
+
+            <!-- Niveau Flyers -->
+            <div class="level-card level-flyers">
+                <h3>Flyers</h3>
+                <p>Pour ceux qui souhaitent développer leurs compétences et communiquer avec confiance.</p>
+            </div>
+        </div>
+
+        <p class="final-note">
+            Ces niveaux aident les enfants à progresser des tâches simples aux tâches plus complexes tout en soutenant leur confiance et leur motivation.
+        </p>
+    </section>
+
+
+    <section id="interactive-classes" style="text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #e6e6fa, #aba2ff); border-radius: 10px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); margin: 40px auto; max-width: 1200px;">
+        <!-- Titre de la section -->
+        <h2 style="color: #fff; font-size: 2rem; margin-bottom: 20px; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);">Cours interactifs et amusants</h2>
+
+        <!-- Texte principal -->
+        <p style="font-size: 1.2rem; color: #fff; line-height: 1.8; max-width: 900px; margin: 0 auto 30px; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);">
+            Chaque cours chez ABC WAY dure 25 minutes et comprend de nombreux outils interactifs. Cela aide à capter l'attention des enfants et rend l'apprentissage passionnant.
+        </p>
+
+        <!-- Bloc interactif -->
+        <div style="display: flex; align-items: flex-start; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 30px;">
+            <!-- Carte 1 -->
+            <div style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #ffffff, #ffd7e1); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <img src="images/game.png" alt="Icône de jeux" style="width: 50px; height: 50px;">
+                </div>
+                <h3 style="color: #333; font-size: 1.4rem; margin-bottom: 10px;">Outils interactifs</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6;">
+                    Des jeux interactifs, des puzzles et des activités amusantes maintiennent l'attention de chaque enfant.
+                </p>
+            </div>
+
+            <!-- Carte 2 -->
+            <div style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #ffffff, #d7e8ff); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <img src="images/alarm-clock.png" alt="Icône de minuteur" style="width: 50px; height: 50px;">
+                </div>
+                <h3 style="color: #333; font-size: 1.4rem; margin-bottom: 10px;">Cours courts et ciblés</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6;">
+                    Les sessions de 25 minutes sont conçues pour maintenir l'attention des enfants et maximiser l'efficacité de l'apprentissage.
+                </p>
+            </div>
+
+            <!-- Carte 3 -->
+            <div style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #ffffff, #e4ffd1); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <img src="images/star.png" alt="Icône d'étoile" style="width: 50px; height: 50px;">
+                </div>
+                <h3 style="color: #333; font-size: 1.4rem; margin-bottom: 10px;">Meilleurs résultats</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6;">
+                    Ce format garantit un engagement total des enfants, facilitant ainsi l'atteinte de leurs objectifs d'apprentissage.
+                </p>
+            </div>
+        </div>
+
+        <!-- Texte de conclusion -->
+        <p style="font-size: 1.1rem; color: #fff; line-height: 1.8; max-width: 900px; margin: 30px auto 0; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);">
+            Grâce à ce format, les enfants s'impliquent facilement dans le processus et obtiennent des résultats exceptionnels tout au long de leur parcours éducatif.
+        </p>
+    </section>
+
+    <section id="achievements">
+        <h2>Vos Réalisations</h2>
+        <div class="achievements-list">
+            <div class="achievement-item">
+                <h3>Compréhension orale</h3>
+                <p>Nos élèves s’immergent activement dans un environnement anglophone, écoutant la parole vivante des
+                    locuteurs natifs et réalisant des tâches qui développent leurs compétences de compréhension.
+                    Cela les aide à comprendre la langue parlée et à répondre avec confiance dans diverses situations.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>Compétences en communication</h3>
+                <p>Nous créons des leçons captivantes avec des thèmes et des projets intéressants qui favorisent
+                    une interaction active entre les élèves. Les enfants apprennent à surmonter les barrières linguistiques,
+                    à exprimer leurs idées et à dialoguer avec les enseignants et leurs camarades, renforçant leur confiance
+                    en communication.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>Lecture</h3>
+                <p>En utilisant des supports pédagogiques spécialement conçus, les élèves améliorent leurs compétences
+                    en lecture et en analyse de texte. Ils apprennent à identifier les idées principales, résumer le
+                    contenu et comprendre les mots inconnus dans leur contexte, approfondissant ainsi leur compréhension
+                    de la langue et de la littérature.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>Écriture</h3>
+                <p>En classe, les élèves apprennent à écrire différents types de textes, y compris des récits, des
+                    descriptions, des arguments, des essais et des lettres. Nous encourageons une approche créative,
+                    permettant à chaque enfant de trouver son style et sa voix uniques en écriture.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="commitment">
+        <h2>Notre engagement</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/sert_native_teachers.jpg" alt="Enseignants certifiés et natifs">
+                <h3>Enseignants certifiés et natifs</h3>
+            </div>
+
+            <div class="card">
+                <img src="images/individualized_support.jpg" alt="Support individualisé">
+                <h3>Support individualisé et politique de remboursement simple</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="partners">
+        <h2>Nos partenaires</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/oxfordpress.jpg" alt="Oxford University Press">
+                <h3>Oxford University Press</h3>
+                <p>Éditeur leader de matériel éducatif et de littérature académique, reconnu pour son riche héritage et son impact mondial sur l'apprentissage.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="teachers">
+        <h2>Nos enseignants</h2>
+        <p>Rencontrez notre incroyable équipe d'enseignants certifiés et natifs qui rendent l'apprentissage amusant et captivant !</p>
+        <div class="teacher-carousel">
+            <!-- Carte de l'enseignant -->
+            <div class="teacher-card">
+                <img src="images/man.jpg" alt="John Doe">
+                <h3>Professeur Mike, Australie</h3>
+                <p>"Briser les barrières, une leçon à la fois."</p>
+            </div>
+
+            <!-- Carte de l'enseignant -->
+            <div class="teacher-card">
+                <img src="images/woman_cuted.jpg" alt="Jane Smith">
+                <h3>Professeur Jane, Russie</h3>
+                <p>"Vous aider à parler la langue du monde."</p>
+            </div>
+
+            <!-- Carte de l'enseignant -->
+            <div class="teacher-card">
+                <img src="images/woman2.jpg" alt="Michael Johnson">
+                <h3>Professeur Kate, Allemagne</h3>
+                <p>"Apprendre aujourd'hui pour diriger demain."</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Rejoignez ABC WAY et ouvrez le monde de l'anglais à votre enfant !</h2>
+        <p>Suivez-nous sur les réseaux sociaux pour rester informé des dernières nouvelles, des idées passionnantes et des conseils utiles pour apprendre l'anglais.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/DyvFwBcDHHpbdiNg/?mibextid=LQQJ4d" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+            </a>
+            <a href="https://wa.me/212702910469" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+            </a>
+            <a href="https://www.instagram.com/abcway_school/profilecard/?igsh=a2Y1OXphaTU1YjRl" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ABC WAY. Tous droits réservés. <br />
+        Conçu avec ❤️ pour les apprenants du monde entier.</p>
+    </footer>
+
+    <!-- Floating Chat Button -->
+    <div class="chat-button" id="chatButton">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <div class="chat-modal" id="chatModal">
+        <div class="modal-header">
+            <img src="images/animal.png" alt="Header Logo" class="contact-logo">
+            <h2>Contactez-nous</h2>
+        </div>
+        <div class="modal-body">
+            <a href="https://www.facebook.com/share/DyvFwBcDHHpbdiNg/?mibextid=LQQJ4d" target="_blank" class="social-button facebook">Facebook</a>
+            <a href="https://wa.me/212702910469" target="_blank" class="social-button whatsapp">WhatsApp</a>
+            <a href="https://www.instagram.com/abcway_school/profilecard/?igsh=a2Y1OXphaTU1YjRl" target="_blank" class="social-button instagram">Instagram</a>
+        </div>
+    </div>
+
+    <script src="just.js"></script>
+</body>
+</html>
