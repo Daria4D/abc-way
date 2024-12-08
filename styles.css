@@ -7,7 +7,7 @@ body {
 }
 
 .fullscreen-background {
-    background: url('images/background2.webp') no-repeat center center fixed;
+    background: url('images/background.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -1031,3 +1031,20 @@ footer p strong {
     margin: 30px auto 0;
 }
 
+.circle-logo {
+    position: absolute;
+    top: 50px; /* Расстояние от верхнего края */
+    right: 20px; /* Расстояние от правого края */
+    width: 100px; /* Диаметр кружка */
+    height: 100px;
+    border-radius: 50%; /* Делает изображение круглым */
+    overflow: hidden; /* Скрывает выходящее за края */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Мягкая тень */
+    z-index: 2; /* Поверх содержимого */
+}
+
+.circle-logo img {
+    width: 100%; /* Изображение полностью заполняет круг */
+    height: 100%; /* Удерживаем пропорции */
+    object-fit: cover; /* Центрируем изображение внутри круга */
+}
