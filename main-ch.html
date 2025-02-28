@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC WAY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <header class="hidden-header">
+        <!-- Логотип -->
+        <img src="images/header.svg" alt="Header Logo" class="header-logo">
+
+        <!-- Действия -->
+        <div class="header-actions">
+            <div class="language-dropdown">
+                <button class="dropdown-button">語言</button>
+                <div class="dropdown-menu">
+                    <a href="main-en.html">🇬🇧 English</a>
+                    <a href="main-ru.html">🇷🇺 Русский</a>
+                    <a href="index.html">🇫🇷 Français</a>
+                    <a href="main-ch.html">🇨🇳 <br/>中國人</a>
+                </div>
+            </div>
+            <button class="home-button">家</button>
+        </div>
+    </header>
+
+
+
+    <div class="fullscreen-background">
+        <!-- Добавляем изображение в виде кружка -->
+        <div class="circle-logo">
+            <img src="images/image.jpg" alt="ABC Way Logo">
+        </div>
+        <div class="fullscreen-content">
+            <div class="text-columns">
+                <div class="column full-width-text">
+                    <h1 class="highlighted-title">ONLINE ENGLISH SCHOOL</h1>
+                    <h3 class="highlighted-description">你好，忙碌的爸爸妈妈！</h3>
+                </div>
+                <div class="column">
+                    <h2>有趣又充满乐趣的英语课程</h2>
+                    <p>想让您的孩子在没有您帮助的情况下学会英语吗？我们会帮您搞定一切！</p>
+                    <p>ABC WAY – 适合 5-18 岁儿童的在线英语课程</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="carousel-container">
+        <button class="carousel-button prev" onclick="moveCarousel(-1)">❮</button>
+        <div class="carousel-wrapper">
+            <div class="carousel">
+                <div class="carousel-item">
+                    <video src="videos/video1.mp4" controls></video>
+                </div>
+                <div class="carousel-item">
+                    <video src="videos/video2.mp4" controls></video>
+                </div>
+                <div class="carousel-item">
+                    <video src="videos/video3.mp4" controls></video>
+                </div>
+                <div class="carousel-item">
+                    <video src="videos/video4.mp4" controls></video>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-button next" onclick="moveCarousel(1)">❯</button>
+    </div>
+
+    <section id="online-classes" style="text-align: center; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: 20px auto; max-width: 1200px;">
+        <h2 style="color: #333; font-size: 2rem; margin-bottom: 20px;">在线课程在 ABC WAY</h2>
+
+        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 20px; justify-content: center; text-align: left;">
+            <!-- Левая текстовая часть -->
+            <ul style="list-style-type: disc; padding-left: 20px; line-height: 1.6; font-size: 1rem; color: #666;">
+                <li>个性化教学 – 孩子可以按照自己的节奏学习</li>
+                <li>经验丰富的教师 – 知道如何激发孩子的兴趣</li>
+                <li>无翻译英语学习 – 孩子自然而然地用英语思考</li>
+                <li>小班授课或一对一教学 – 给予最大关注</li>
+                <li>家长支持 – 进度报告（如果您需要的话！）</li>
+            </ul>
+
+            <!-- Центральное изображение -->
+            <div style="flex: 0 1 auto; text-align: center; padding: 10px;">
+                <img src="images/central_woman.jpg" alt="Центральный персонаж" style="width: 200px; height: auto; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            </div>
+
+            <!-- Правая текстовая часть -->
+            <div style="flex: 1; min-width: 300px; padding: 10px;">
+                <ul style="list-style-type: disc; padding-left: 20px; line-height: 1.6; font-size: 1rem; color: #666;">
+                    <h2>您的孩子在可靠的手中 – 我们像教自己孩子一样教学！</h2>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-abcway" style="text-align: center; padding: 40px 20px; background-color: #e6e6fa; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin: 40px auto; max-width: 1200px; position: relative;">
+        <!-- Фоновое изображение -->
+        <img src="images/zverek_2.png" alt="Фоновый персонаж" style="position: absolute; top: -20px; left: -40px; width: 150px; opacity: 0.8; z-index: 0;">
+
+        <!-- Заголовок секции -->
+        <h2 style="color: #333; font-size: 2rem; margin-bottom: 20px; text-transform: uppercase; position: relative; z-index: 1;">
+            关于 ABC WAY 学校
+        </h2>
+
+        <!-- Описание -->
+        <p style="font-size: 1.1rem; color: #666; line-height: 1.8; max-width: 900px; margin: 0 auto; position: relative; z-index: 1;">
+            专注于 5-18 岁儿童英语教学的在线英语学校。我们帮助学生学习英语、备考，并建立自信心。
+        </p>
+
+        <!-- Блок с дополнительной информацией -->
+        <div style="display: flex; align-items: flex-start; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 30px; position: relative; z-index: 1;">
+            <!-- Левая колонка -->
+            <div style="flex: 1; min-width: 280px; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); position: relative;">
+                <h3 style="color: #333; font-size: 1.2rem; margin-bottom: 15px;">优质教育</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6;">
+                    我们使用牛津大学出版社的教材，确保高质量的教学。我们的课程基于传统家庭价值观，营造友好温馨的课堂氛围。
+                </p>
+            </div>
+
+            <!-- Центральный блок -->
+            <div style="flex: 1; min-width: 280px; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); position: relative;">
+                <!-- Добавляем изображение -->
+                <img src="images/zverek_3.png" alt="Центральный персонаж" style="width: 100px; height: auto; margin-bottom: 15px;">
+                <h3 style="color: #333; font-size: 1.2rem; margin-bottom: 15px;">无压力学习</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6;">
+                    我们珍视每一位学生，并创造轻松愉快的学习环境。我们的方法帮助孩子建立自信，享受英语学习的乐趣。
+                </p>
+            </div>
+
+            <!-- Правая колонка -->
+            <div style="flex: 1; min-width: 280px; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); position: relative;">
+                <h3 style="color: #333; font-size: 1.2rem; margin-bottom: 15px;">激发潜能</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6;">
+                    在我们这里，孩子们发现自己的潜力，从学习中获得灵感，并感受到自己是广阔世界的一部分。
+                </p>
+            </div>
+        </div>
+    </section>
+
+   <section id="curriculum">
+        <!-- Заголовок секции -->
+        <h2>我们的课程</h2>
+            <p>
+                我们的课程符合国际标准，如 CEFR（欧洲语言共同参考框架）和 CYLE（剑桥青少英语），并包含牛津大学的各个级别：
+            </p>
+
+        <!-- Уровни обучения -->
+        <div class="levels-container">
+            <!-- Уровень Starters -->
+            <div class="level-card level-starters">
+                <h3>Starters</h3>
+                <p>适合初学者，通过游戏和互动任务学习英语。</p>
+            </div>
+
+            <!-- Movers 级别 -->
+            <div class="level-card level-movers">
+                <h3>Movers</h3>
+                <p>适合具备基础知识的孩子，准备迎接新的挑战。</p>
+            </div>
+
+            <!-- Flyers 级别 -->
+            <div class="level-card level-flyers">
+                <h3>Flyers</h3>
+                <p>适合希望提升技能并自信交流的孩子。</p>
+            </div>
+        </div>
+
+        <p class="final-note">
+            这些级别帮助孩子们从简单任务逐步过渡到更复杂的挑战，同时保持他们的自信心和学习动力。
+        </p>
+    </section>
+
+
+    <section id="interactive-classes" style="text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #e6e6fa, #aba2ff); border-radius: 10px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); margin: 40px auto; max-width: 1200px;">
+        <!-- Заголовок секции -->
+        <h2 style="color: #fff; font-size: 2rem; margin-bottom: 20px; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);">
+            有趣且互动的课程
+        </h2>
+
+        <!-- Основной текст -->
+        <p style="font-size: 1.2rem; color: #fff; line-height: 1.8; max-width: 900px; margin: 0 auto 30px; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);">
+            ABC WAY 的每节课时长 25 分钟，并包含多种互动工具。这有助于吸引孩子们的注意力，让学习变得有趣和生动。
+        </p>
+
+        <!-- Интерактивный блок -->
+        <div style="display: flex; align-items: flex-start; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 30px;">
+            <!-- Карточка 1 -->
+            <div style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #ffffff, #ffd7e1); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <img src="images/game.png" alt="Иконка игр" style="width: 50px; height: 50px;">
+                </div>
+                <h3 style="color: #333; font-size: 1.4rem; margin-bottom: 10px;">互动工具</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6;">
+                    互动游戏、益智拼图和有趣的任务有助于吸引每个孩子的注意力。
+                </p>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #ffffff, #d7e8ff); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <img src="images/alarm-clock.png" alt="Иконка таймера" style="width: 50px; height: 50px;">
+                </div>
+                <h3 style="color: #333; font-size: 1.4rem; margin-bottom: 10px;">短时且专注的课程</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6;">
+                    25 分钟的课程专为吸引孩子的注意力而设计，以实现最佳学习效果。
+                </p>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div style="flex: 1; min-width: 280px; background: linear-gradient(135deg, #ffffff, #e4ffd1); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <div style="text-align: center; margin-bottom: 15px;">
+                    <img src="images/star.png" alt="Иконка звезды" style="width: 50px; height: 50px;">
+                </div>
+                <h3 style="color: #333; font-size: 1.4rem; margin-bottom: 10px;">最佳学习成果</h3>
+                <p style="font-size: 1rem; color: #666; line-height: 1.6;">
+                    这种课程形式确保孩子们全身心投入学习，帮助他们取得更好的学习成果。
+                </p>
+            </div>
+        </div>
+
+        <!-- Заключительное описание -->
+        <p style="font-size: 1.1rem; color: #fff; line-height: 1.8; max-width: 900px; margin: 30px auto 0; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);">
+            这种课程形式让孩子们轻松融入学习过程，并在学习道路上取得卓越成果。
+        </p>
+    </section>
+
+    <section id="teachers">
+        <h2>我们的教师</h2>
+        <p>认识我们优秀的母语认证教师团队，他们让学习变得有趣且充满乐趣！</p>
+        <div class="teacher-carousel">
+            <!-- 教师卡片 -->
+            <div class="teacher-card">
+                <img src="images/man.jpg" alt="约翰·杜">
+                <h3>教师迈克，澳大利亚</h3>
+                <p>"打破语言障碍，一课一进步。"</p>
+            </div>
+
+            <!-- 教师卡片 -->
+            <div class="teacher-card">
+                <img src="images/woman_cuted.jpg" alt="简·史密斯">
+                <h3>教师简，俄罗斯</h3>
+                <p>"帮助你掌握这门全球语言。"</p>
+            </div>
+
+            <!-- 教师卡片 -->
+            <div class="teacher-card">
+                <img src="images/woman2.jpg" alt="迈克尔·约翰逊">
+                <h3>教师凯特，德国</h3>
+                <p>"今天学习，明日领航。"</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <h2>您的成就</h2>
+        <div class="achievements-list">
+            <div class="achievement-item">
+                <h3>听力理解</h3>
+                <p>我们的学生积极沉浸在英语环境中，聆听母语者的真实对话，并完成有助于培养听力理解能力的练习。这帮助他们理解口语，并在各种情况下自信应对。</p>
+            </div>
+            <div class="achievement-item">
+                <h3>沟通能力</h3>
+                <p>我们设计有趣的课程，结合互动主题和项目，促进学生之间的交流。孩子们学会克服语言障碍，表达自己的想法，并与教师和同学进行对话，从而增强他们的沟通信心。</p>
+            </div>
+            <div class="achievement-item">
+                <h3>阅读能力</h3>
+                <p>通过精心设计的学习材料，学生们提高阅读和文本分析技能。他们学会提取关键信息，总结内容，并在上下文中理解生词，从而加深对语言和文学的掌握。</p>
+            </div>
+            <div class="achievement-item">
+                <h3>写作能力</h3>
+                <p>在课程中，孩子们学习撰写各种类型的文本，包括故事、描述、议论文、作文和书信。我们鼓励创造性表达，让每个孩子找到自己独特的写作风格和声音。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="commitment">
+        <h2>为什么家长选择 ABC WAY</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/sert_native_teachers.jpg" alt="认证母语教师">
+                <h3>认证母语教师</h3>
+            </div>
+
+            <div class="card">
+                <img src="images/individualized_support.jpg" alt="个性化支持">
+                <h3>个性化支持和简单的退款政策</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <br/><br/>
+        <h2>加入 ABC WAY，为您的孩子开启英语世界！</h2>
+        <p>关注我们的社交媒体，获取最新资讯、有趣的学习点子和实用的英语学习技巧。</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/DyvFwBcDHHpbdiNg/?mibextid=LQQJ4d" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+            </a>
+            <a href="https://wa.me/212702910469" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+            </a>
+            <a href="https://www.instagram.com/abcway_school/profilecard/?igsh=a2Y1OXphaTU1YjRl" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ABC WAY. 版权所有。<br />
+        用 ❤️ 为全球学习者打造。</p>
+    </footer>
+
+    <!-- Floating Chat Button -->
+    <div class="chat-button" id="chatButton">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <div class="chat-modal" id="chatModal">
+        <div class="modal-header">
+            <img src="images/animal.png" alt="Header Logo" class="contact-logo">
+            <h2>联系我们</h2>
+        </div>
+        <div class="modal-body">
+            <a href="https://www.facebook.com/share/DyvFwBcDHHpbdiNg/?mibextid=LQQJ4d" target="_blank" class="social-button facebook">Facebook</a>
+            <a href="https://wa.me/212702910469" target="_blank" class="social-button whatsapp">WhatsApp</a>
+            <a href="https://www.instagram.com/abcway_school/profilecard/?igsh=a2Y1OXphaTU1YjRl" target="_blank" class="social-button instagram">Instagram</a>
+        </div>
+    </div>
+
+    <script src="just.js"></script>
+</body>
+</html>
