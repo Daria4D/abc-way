@@ -1,3 +1,5 @@
+let hasScrolled = false;
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -37,9 +39,11 @@ const closeChatModal = () => {
 chatButton.addEventListener('click', () => {
     if (chatModal.classList.contains('active')) {
         closeChatModal(); // Закрыть, если открыто
+        hasScrolled = false;
     } else {
         chatModal.classList.add('active'); // Открыть
         chatLabel.style.opacity = 0;
+        hasScrolled = true;
     }
 });
 
@@ -52,6 +56,7 @@ document.addEventListener('click', (event) => {
         chatModal.classList.contains('active') // Если модальное окно открыто
     ) {
         closeChatModal();
+        hasScrolled = false;
     }
 });
 
@@ -116,7 +121,7 @@ window.addEventListener('scroll', () => {
 
     lastScrollTop = currentScrollTop; // Обновить последнее значение скролла
 
-    if (currentScrollTop > 30) {
+    if (!hasScrolled && currentScrollTop > 30) {
         chatLabel.style.opacity = '1';
         chatLabel.style.transform = 'translateX(0)';
     }
