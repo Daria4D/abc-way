@@ -449,7 +449,16 @@ footer p strong {
         visibility: visible;
         transition: opacity 0.5s ease, transform 0.5s ease;
         transform: translateX(10px); /* Изначально немного смещён */
+}
+
+/* Адаптация для мобильных экранов */
+@media (max-width: 480px) {
+    .chat-label {
+        font-size: 13px; /* Еще меньше текст на очень маленьких экранах */
+        max-width: 80vw; /* Ограничиваем ширину, чтобы не выходило за экран */
+        padding: 5px 8px; /* Уменьшаем внутренние отступы */
     }
+}
 
     /* Анимация при наведении */
 .chat-container:hover .chat-label {
