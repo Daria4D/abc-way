@@ -39,6 +39,7 @@ chatButton.addEventListener('click', () => {
         closeChatModal(); // Закрыть, если открыто
     } else {
         chatModal.classList.add('active'); // Открыть
+        chatLabel.style.opacity = 0;
     }
 });
 
@@ -58,6 +59,7 @@ let currentIndex = 0;
 const itemsToShow = window.innerWidth < 768 ? 1 : 3; // Показываем одно видео на мобильных
 const carousel = document.querySelector('.carousel');
 const totalItems = document.querySelectorAll('.carousel-item').length;
+
 
 function moveCarousel(direction) {
     const maxIndex = totalItems - itemsToShow;
@@ -93,6 +95,7 @@ window.addEventListener('load', () => {
     }
 });
 
+const chatLabel = document.querySelector('.chat-label');
 // Управление хэдером при скролле
 window.addEventListener('scroll', () => {
     const currentScrollTop = window.scrollY;
@@ -110,6 +113,14 @@ window.addEventListener('scroll', () => {
     } else {
         header.classList.add('show'); // Показать хэдер при прокрутке вверх
     }
+
     lastScrollTop = currentScrollTop; // Обновить последнее значение скролла
+    let hasScrolled = false;
+
+    if (!hasScrolled && currentScrollTop != 0) {
+        hasScrolled = true;
+        chatLabel.style.opacity = '1';
+        chatLabel.style.transform = 'translateX(0)';
+    }
 });
 

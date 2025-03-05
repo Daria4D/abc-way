@@ -375,24 +375,31 @@ footer p strong {
     font-weight: bold;
 }
 
+.chat-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        z-index: 1000;
+}
+
 /* Кнопка чата */
 .chat-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: #aba2ff;
-    color: white;
-    font-size: 24px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    z-index: 1000;
-    transition: transform 0.3s ease, background-color 0.3s;
+        width: 60px;
+        height: 60px;
+        background-color: #aba2ff;
+        color: white;
+        font-size: 24px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        z-index: 1000;
+        transition: transform 0.3s ease, background-color 0.3s;
+        position: relative;
 }
 
 .chat-button:hover {
@@ -423,6 +430,30 @@ footer p strong {
     z-index: 999;
     opacity: 0; /* Начальная прозрачность */
     pointer-events: none; /* Отключаем клики, пока окно скрыто */
+}
+
+.chat-label {
+        background-color: yellow;
+        color: black;
+        padding: 5px 12px;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        text-align: center;
+        white-space: nowrap;
+        position: absolute;
+        right: 100%;
+        margin-right: 10px; /* Отступ между кнопкой и текстом */
+        opacity: 0; /* Теперь он всегда видимый */
+        visibility: visible;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        transform: translateX(10px); /* Изначально немного смещён */
+    }
+
+    /* Анимация при наведении */
+.chat-container:hover .chat-label {
+    transform: translateX(0); /* Двигаем его ближе к кнопке */
 }
 
 .chat-modal.active {
