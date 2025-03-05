@@ -115,10 +115,8 @@ window.addEventListener('scroll', () => {
     }
 
     lastScrollTop = currentScrollTop; // Обновить последнее значение скролла
-    let hasScrolled = false;
 
-    if (!hasScrolled && currentScrollTop != 0) {
-        hasScrolled = true;
+    if (currentScrollTop > 30) {
         chatLabel.style.opacity = '1';
         chatLabel.style.transform = 'translateX(0)';
     }
